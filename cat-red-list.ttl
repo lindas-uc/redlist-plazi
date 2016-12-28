@@ -1,0 +1,56 @@
+@prefix rr:     <http://www.w3.org/ns/r2rml#>.
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:     <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf:	  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#>.
+@prefix fp:     <http://filteredpush.org/ontologies/oa/dwcFP#>.
+@prefix tdwg:   <http://rs.tdwg.org/dwc/terms/>.
+@prefix dcterm: <http://purl.org/dc/terms/>.
+@prefix plazi:  <http://plazi.org/vocab/treatment#>.
+@prefix wo:     <http://purl.org/ontology/wo/>.
+@prefix botany: <http://purl.org/NET/biol/botany#>.
+
+
+<#Cat>
+
+    rml:logicalSource [
+    rml:source "input/red-list-cat.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+
+    rr:subjectMap [
+        rr:template "http://taxon-name.plazi.org/id/conservationStatus/{CAT}";
+        rr:class wo:ConservationStatus;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate wo:redListStatus;
+        rr:objectMap [
+            rml:reference "CAT";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rml:reference "Gefahrdungstatus";
+            rr:language "de";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rml:reference "Statut de menace";
+            rr:language "fr";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rml:reference "Categoria di minaccia";
+            rr:language "it";
+        ]
+    ].

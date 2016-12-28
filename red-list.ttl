@@ -1,0 +1,122 @@
+@prefix rr:     <http://www.w3.org/ns/r2rml#>.
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:     <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf:	  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#>.
+@prefix fp:     <http://filteredpush.org/ontologies/oa/dwcFP#>.
+@prefix tdwg:   <http://rs.tdwg.org/dwc/terms/>.
+@prefix dcterm: <http://purl.org/dc/terms/>.
+@prefix plazi:  <http://plazi.org/vocab/treatment#>.
+@prefix wo:     <http://purl.org/ontology/wo/>.
+@prefix botany: <http://purl.org/NET/biol/botany#>.
+
+
+<#Plant>
+
+    rml:logicalSource [
+	  rml:source "input/plant.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+
+    rr:subjectMap [
+        rr:template "http://taxon-name.plazi.org/id/Plantae/{Scientific_name}";
+        rr:class fp:TaxonName;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate plazi:hasParentNameXXX;
+        rr:objectMap [
+            rml:reference "FAMILY";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate botany:group;
+        rr:objectMap [
+            rml:reference "GROUP";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate tdwg:family;
+        rr:objectMap [
+            rml:reference "FAMILY";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate tdwg:genus;
+        rr:objectMap [
+            rml:reference "GENUS";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate tdwg:species;
+        rr:objectMap [
+            rml:reference "SPECIES";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rml:reference "Deutscher Name";
+            rr:language "de";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rml:reference "Nom en français";
+            rr:language "fr";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rml:reference "Nome in italiano";
+            rr:language "it";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate wo:conservationStatusXXX;
+        rr:objectMap [
+            rml:reference "CAT";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment;
+        rr:objectMap [
+            rml:reference "Bemerkungen";
+            rr:language "de";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment;
+        rr:objectMap [
+            rml:reference "Remarques";
+            rr:language "fr";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment;
+        rr:objectMap [
+            rml:reference "Annotazioni";
+            rr:language "it";
+        ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterm:identifier;
+        rr:objectMap [
+            rml:reference "ID_ISFS";
+        ]
+    ].

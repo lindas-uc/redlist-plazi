@@ -1,0 +1,54 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix tdwg:  <http://rs.tdwg.org/dwc/terms/> .
+@prefix botany: <http://purl.org/NET/biol/botany#> .
+@prefix wo:    <http://purl.org/ontology/wo/> .
+@prefix plazi: <http://plazi.org/vocab/treatment#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix fp:    <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://taxon-name.plazi.org/id/conservationStatus/DD>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Dati insufficienti"@it , "Données insuffisantes"@fr , "Ungenügende Datengrundlage"@de ;
+        wo:redListStatus  "DD" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/NE>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Nicht beurteilt"@de , "Non évalué"@fr , "Non valutato"@it ;
+        wo:redListStatus  "NE" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/VU>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Verletzlich"@de , "Vulnerabile"@it , "Vulnérable"@fr ;
+        wo:redListStatus  "VU" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/CR>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Au bord de l’extinction; CR(PE) Probablement éteint («disparu»)"@fr , "In pericolo d’estinzione"@it , "Vom Aussterben bedroht; CR(PE) Vermutlich ausgestorben («verschollen»)"@de ;
+        wo:redListStatus  "CR" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/LC>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Nicht gefährdet"@de , "Non menacé"@fr , "Non minacciato"@it ;
+        wo:redListStatus  "LC" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/NT>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Potentiellement menacé"@fr , "Potenzialmente minacciato"@it , "Potenziell gefährdet"@de ;
+        wo:redListStatus  "NT" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/RE>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Estinto in Svizzera"@it , "Eteint en Suisse"@fr , "In der Schweiz ausgestorben"@de ;
+        wo:redListStatus  "RE" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/NA>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "Non applicabile in Svizzera"@it , "Non applicable in Svizzera"@fr , "Regional nicht anwendbar"@de ;
+        wo:redListStatus  "NA" .
+
+<http://taxon-name.plazi.org/id/conservationStatus/EN>
+        a                 wo:ConservationStatus ;
+        rdfs:label        "En danger"@fr , "Fortemente minacciato"@it , "Stark gefährdet"@de ;
+        wo:redListStatus  "EN" .
